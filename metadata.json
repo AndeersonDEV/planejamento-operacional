@@ -1,0 +1,8 @@
+{
+  "name": "Remix Capacidades Inbound \u0026 Outbound",
+  "description": "Dashboard de controle de capacidades logísticas Inbound e Outbound com hierarquia temporal e controle de perfis de usuário.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

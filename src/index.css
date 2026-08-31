@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+/* Custom scrollbar styling for dashboard */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(30, 41, 59, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.4);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.6);
+}
+
+/* Smooth fade-in effects */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* 🌌 TENDÊNCIAS DE TEMA ESCURO 2026/2027 - PROJETO COMPLETO */
+.dark {
+  color-scheme: dark;
+  --bg-dark-deep: #02040a;      /* Preto profundo de fundo de tela */
+  --bg-dark-card: #0b132b;      /* Tom 1 de azul escuro profundo para os cartões */
+  --bg-dark-panel: #1c2541;     /* Tom 2 de azul escuro ligeiramente mais claro para painéis/subseções */
+  --bg-dark-input: #050811;     /* Fundo de inputs mais profundo */
+  --border-dark: #1e295d;       /* Borda azul escuro/índigo para estrutura */
+  --border-dark-soft: rgba(30, 41, 93, 0.45);
+  --text-dark-primary: #f8fafc; /* Texto claro de alto destaque */
+  --text-dark-secondary: #e2e8f0; /* Texto claro secundário */
+  --text-dark-muted: #94a3b8;     /* Texto cinza azulado legível */
+  --glow-accent: rgba(99, 102, 241, 0.3); /* Efeito glow índigo elétrico */
+}
+
+/* Forçar fundos e cores no tema escuro em todo o HTML/body se ativado */
+.dark, .dark body {
+  background-color: var(--bg-dark-deep) !important;
+  color: var(--text-dark-primary) !important;
+}
+
+/* Header & Footer com Glassmorphism Escuro e Azul Gloss */
+.dark header {
+  background: rgba(11, 19, 43, 0.8) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid rgba(99, 102, 241, 0.3) !important;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+}
+
+.dark footer {
+  background: rgba(5, 8, 17, 0.9) !important;
+  border-top-color: var(--border-dark) !important;
+  color: var(--text-dark-secondary) !important;
+}
+
+.dark footer span, 
+.dark footer div {
+  color: var(--text-dark-secondary) !important;
+}
+
+/* Transformar cards .bg-white e layouts de containers */
+.dark .bg-white {
+  background-color: var(--bg-dark-card) !important;
+  border-color: var(--border-dark) !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 8px 10px -6px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(99, 102, 241, 0.15) !important;
+}
+
+/* Elementos de navegação e botões em geral */
+.dark nav {
+  background-color: var(--bg-dark-input) !important;
+  border-color: var(--border-dark) !important;
+}
+
+.dark nav button {
+  color: var(--text-dark-secondary) !important;
+}
+
+.dark nav button:hover {
+  color: var(--text-dark-primary) !important;
+}
+
+/* Inputs, Selects, Dropdowns e Formulários com alto destaque */
+.dark select,
+.dark input,
+.dark textarea {
+  background-color: var(--bg-dark-input) !important;
+  border-color: var(--border-dark) !important;
+  color: var(--text-dark-primary) !important;
+}
+
+.dark select option {
+  background-color: var(--bg-dark-card) !important;
+  color: var(--text-dark-primary) !important;
+}
+
+.dark .bg-slate-50,
+.dark .bg-slate-50\/80,
+.dark .bg-slate-100,
+.dark .bg-slate-100\/90,
+.dark .bg-slate-150 {
+  background-color: var(--bg-dark-panel) !important;
+  border-color: var(--border-dark) !important;
+}
+
+/* Tabelas e Grelhas */
+.dark table {
+  border-color: var(--border-dark) !important;
+}
+
+.dark th {
+  background-color: var(--bg-dark-panel) !important;
+  color: var(--text-dark-primary) !important;
+  border-color: var(--border-dark) !important;
+}
+
+.dark td {
+  border-color: var(--border-dark-soft) !important;
+  color: var(--text-dark-primary) !important;
+}
+
+.dark tr:hover td {
+  background-color: rgba(28, 37, 65, 0.7) !important;
+}
+
+/* Ajustes de tipografia e textos - ALTO DESTAQUE DE TEXTOS CLAROS EM CONTAINER ESCURO */
+.dark .text-slate-900,
+.dark .text-slate-800,
+.dark .text-slate-750,
+.dark .text-slate-700,
+.dark .text-slate-600,
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6 {
+  color: var(--text-dark-primary) !important;
+}
+
+.dark .text-slate-500,
+.dark .text-slate-400 {
+  color: var(--text-dark-secondary) !important;
+}
+
+/* Botões do header e UI com efeito Indigo/Azul Gloss */
+.dark button.bg-white {
+  background: linear-gradient(135deg, rgba(28, 37, 65, 0.8), rgba(11, 19, 43, 0.9)) !important;
+  border: 1px solid rgba(99, 102, 241, 0.4) !important;
+  color: var(--text-dark-primary) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(4px) !important;
+}
+
+.dark button.bg-white:hover {
+  background: linear-gradient(135deg, rgba(30, 41, 93, 0.9), rgba(11, 19, 43, 1)) !important;
+  border-color: rgba(99, 102, 241, 0.8) !important;
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.4) !important;
+}
+
+/* Efeito Indigo/Azul Gloss de Destaque */
+.dark .bg-indigo-600,
+.dark .bg-blue-600 {
+  background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%) !important;
+  color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.4) !important;
+  box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.3) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.dark .bg-indigo-600:hover,
+.dark .bg-blue-600:hover {
+  background: linear-gradient(135deg, #4338ca 0%, #2563eb 100%) !important;
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.6) !important;
+}
+
+/* Efeito de Glow Neon 2026/2027 sutil */
+.dark .shadow-sm,
+.dark .shadow-md,
+.dark .shadow-lg,
+.dark .shadow-xl,
+.dark .shadow-2xl {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(99, 102, 241, 0.1) !important;
+}
+
+/* Badges e estados sutis com alto contraste de texto */
+.dark .bg-emerald-50, .dark .bg-emerald-50\/80 {
+  background-color: rgba(16, 185, 129, 0.18) !important;
+  border-color: rgba(16, 185, 129, 0.35) !important;
+  color: #34d399 !important;
+}
+
+.dark .bg-blue-50, .dark .bg-blue-50\/80 {
+  background-color: rgba(59, 130, 246, 0.18) !important;
+  border-color: rgba(59, 130, 246, 0.35) !important;
+  color: #60a5fa !important;
+}
+
+.dark .bg-rose-50, .dark .bg-rose-50\/80 {
+  background-color: rgba(244, 63, 94, 0.18) !important;
+  border-color: rgba(244, 63, 94, 0.35) !important;
+  color: #fb7185 !important;
+}
+
+.dark .bg-amber-50, .dark .bg-amber-50\/80 {
+  background-color: rgba(245, 158, 11, 0.18) !important;
+  border-color: rgba(245, 158, 11, 0.35) !important;
+  color: #fbbf24 !important;
+}
+
+.dark .bg-indigo-50, .dark .bg-indigo-50\/80 {
+  background-color: rgba(99, 102, 241, 0.18) !important;
+  border-color: rgba(99, 102, 241, 0.35) !important;
+  color: #a5b4fc !important;
+}
+
+.dark .bg-purple-50, .dark .bg-purple-50\/80 {
+  background-color: rgba(168, 85, 247, 0.18) !important;
+  border-color: rgba(168, 85, 247, 0.35) !important;
+  color: #d8b4fe !important;
+}
+
+/* Modais e Overlays */
+.dark .bg-white\/90 {
+  background-color: rgba(11, 19, 43, 0.95) !important;
+  border-color: var(--border-dark) !important;
+}
+
+/* Correções específicas para o dashboard e tabelas no modo escuro */
+.dark .text-indigo-600 {
+  color: #a5b4fc !important;
+}
+
+.dark .text-blue-600 {
+  color: #60a5fa !important;
+}
+
+.dark .text-rose-600 {
+  color: #f43f5e !important;
+}
+
+.dark .text-emerald-600 {
+  color: #10b981 !important;
+}
+
+.dark .text-amber-600 {
+  color: #f59e0b !important;
+}
+
+/* Ajustes de divisores de linha */
+.dark .divide-y > :not([hidden]) ~ :not([hidden]) {
+  border-color: var(--border-dark-soft) !important;
+}
+
+.dark .divide-x > :not([hidden]) ~ :not([hidden]) {
+  border-color: var(--border-dark-soft) !important;
+}
+
+/* 🌌 TARGETED STYLING FOR FOCUS SELECTORS IN DARK MODE (2026/2027 TRENDS) */
+
+/* Element 1: Header logo & title container (Selected by user) */
+.dark div#root:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) {
+  background: rgba(11, 19, 43, 0.5) !important; /* Shade 1 dark blue with alpha */
+  border: 1px solid rgba(99, 102, 241, 0.25) !important; /* Subtle indigo gloss border */
+  padding: 0.5rem 1rem !important;
+  border-radius: 1.25rem !important;
+  backdrop-filter: blur(10px) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(99, 102, 241, 0.15) !important;
+}
+
+/* Ensure typography within Element 1 has maximum contrast */
+.dark div#root:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) h1 {
+  color: #ffffff !important;
+  text-shadow: 0 0 10px rgba(99, 102, 241, 0.3) !important;
+}
+
+.dark div#root:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) p {
+  color: #cbd5e1 !important; /* High contrast light slate */
+}
+
+
+/* Element 2: Table container footer (Selected by user) */
+.dark div#root:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) {
+  background: linear-gradient(135deg, #1c2541 0%, #0b132b 100%) !important; /* Combining the two shades of dark blue (Tone 1 and Tone 2) */
+  border-top: 1px solid rgba(99, 102, 241, 0.4) !important; /* Indigo gloss border */
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 -4px 25px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Ensure typography within Element 2 has maximum contrast */
+.dark div#root:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) p,
+.dark div#root:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) span,
+.dark div#root:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) div {
+  color: #ffffff !important; /* Forces maximum white text contrast */
+}
+
+/* Specific sub-elements in Element 2 footer */
+.dark div#root:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) .text-slate-400,
+.dark div#root:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) .text-slate-500 {
+  color: #e2e8f0 !important; /* Slightly softer but extremely high contrast */
+}
+
+.dark div#root:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2) .text-slate-800 {
+  color: #ffffff !important; /* Pure white contrast for numbers */
+}
